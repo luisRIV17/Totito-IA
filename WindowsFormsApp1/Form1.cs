@@ -131,6 +131,7 @@ namespace WindowsFormsApp1
             }
             return false;
         }
+      
 
         private bool Empate()
         {
@@ -165,6 +166,13 @@ namespace WindowsFormsApp1
             Random rand = new Random();
             int fran, cran;
             // Thread.Sleep(1000);
+            if ((matriz[0, 0] == 'X' || matriz[0, 2] == 'X' || matriz[2, 0] == 'X' || matriz[2, 2] == 'X') && matriz[1, 1] == '-')
+            { 
+                matriz[1, 1] = 'O';
+                cambiasigno("1", "1");
+                return;
+            }
+               
             for (int f = 0; f <= 2; f++)
             {
                 for (int c = 0; c <= 2; c++)
